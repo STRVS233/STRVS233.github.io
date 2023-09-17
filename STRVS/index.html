@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>工程V1.0</title>
+        <link rel="stylesheet" type="text/css" href="PullDownAccordion/PDA.css">
+        <style>
+            body{
+                background:#e2fae2;
+            }
+        </style>
+    </head>
+    <body>
+        <svg id="sc" width="22.5" height="22.5" xmlns="http://www.w3.org/2000/svg"><g><ellipse ry="5.49999" rx="5.49999" cy="8.59373" cx="9.4375" stroke="#000" fill="none"/><line y2="19.09372" x2="19.43749" y1="12.53123" x1="13.0625" stroke="#000" fill="none"/></g></svg>
+        <input type="text" id="inputField" placeholder="输入内容">
+        <br><br>工程列表V1.0<br>
+        <!--start-->
+        <pda name="猪人塔（半圆）">状态:正在建造|坐标:不详|产物:金锭、金粒、腐肉|备注:无</pda>
+        <pda name="刷铁机"></pda>
+        <pda name="村民交易"></pda>
+        <pda name="袭击塔（423k）"></pda>
+        <pda name="袭击塔（900k）"></pda>
+        <pda name="刷怪塔（120w）空置域"></pda>
+        <pda name="经验熔炉"></pda>
+        <pda name="树场（自动橡木）"></pda>
+        <pda name="树场（手动全树种丐）"></pda>
+        <pda name="骨粉机"></pda>
+        <pda name="村民繁殖"></pda>
+        <pda name="自动作物农场"></pda>
+        <pda name="刷冰机（传统）"></pda>
+        <pda name="刷冰机（72k）"></pda>
+        <pda name="挖石机（72k）"></pda>
+        <pda name="双模式刷石机（300k）"></pda>
+        <pda name="熔炉组（320）"></pda>
+        <pda name="紫水晶农场"></pda>
+        <pda name="树场（手动全树种）"></pda>
+        <pda name="主世界矿机"></pda>
+        <pda name="下界矿机"></pda>
+        <pda name="下界蘑菇场"></pda>
+        <pda name="潜影贝农场"></pda>
+        <pda name="珍珠传送站"></pda>
+        <pda name="玩家炮"></pda>
+        <!--finish-->
+        没有更多了……
+        <!--no-->
+        <script>
+            const inputField = document.getElementById("inputField");
+            const divs = document.getElementsByClassName("pda"); 
+            const aElements = document.getElementsByClassName("name");
+            inputField.addEventListener("input", function() {
+                const inputValue = inputField.value.toLowerCase();
+                for (let i = 0; i < aElements.length; i++) {
+                    const a = aElements[i];
+                    const aText = a.innerText.toLowerCase();
+                    if (aText.includes(inputValue)) {
+                        divs[i].style.display = "block";
+                    } else {
+                        divs[i].style.display = "none";
+                    }
+                }
+            });
+        </script>
+        <script src="PullDownAccordion/PDA.js"></script>
+    </body>
+</html>
